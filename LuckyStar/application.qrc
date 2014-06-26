@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/new/MainToolbar">
+        <file>images/Add.gif</file>
+        <file>images/Delete.gif</file>
+    </qresource>
+</RCC>
