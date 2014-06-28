@@ -6,42 +6,32 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>500</width>
-    <height>330</height>
+    <width>600</width>
+    <height>410</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QListView" name="listViewProjects">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>151</width>
-      <height>271</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
       <x>160</x>
-      <y>140</y>
-      <width>331</width>
+      <y>220</y>
+      <width>431</width>
       <height>131</height>
      </rect>
     </property>
     <property name="title">
-     <string>抽奖活动基本信息</string>
+     <string>抽奖活动奖项信息</string>
     </property>
     <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>10</x>
        <y>22</y>
-       <width>231</width>
+       <width>331</width>
        <height>71</height>
       </rect>
      </property>
@@ -93,10 +83,10 @@
     <widget class="QPushButton" name="pushButton">
      <property name="geometry">
       <rect>
-       <x>250</x>
+       <x>350</x>
        <y>20</y>
        <width>71</width>
-       <height>51</height>
+       <height>71</height>
       </rect>
      </property>
      <property name="text">
@@ -108,7 +98,7 @@
       <rect>
        <x>10</x>
        <y>100</y>
-       <width>239</width>
+       <width>331</width>
        <height>25</height>
       </rect>
      </property>
@@ -137,85 +127,124 @@
      </layout>
     </widget>
    </widget>
-   <widget class="QWidget" name="layoutWidget">
+   <widget class="QListWidget" name="listProjects">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>151</width>
+      <height>351</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_2">
     <property name="geometry">
      <rect>
       <x>160</x>
-      <y>2</y>
-      <width>331</width>
-      <height>129</height>
+      <y>10</y>
+      <width>431</width>
+      <height>201</height>
      </rect>
     </property>
-    <layout class="QGridLayout" name="gridLayout_2">
-     <item row="0" column="0">
-      <widget class="QLabel" name="label">
-       <property name="text">
-        <string>项目名</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="1" colspan="3">
-      <widget class="QLineEdit" name="lineEdit"/>
-     </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="label_2">
-       <property name="text">
-        <string>抽奖主题</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1" colspan="3">
-      <widget class="QLineEdit" name="lineEdit_2"/>
-     </item>
-     <item row="2" column="0">
-      <widget class="QLabel" name="label_5">
-       <property name="text">
-        <string>抽奖副标题</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="1" colspan="3">
-      <widget class="QLineEdit" name="lineEdit_3"/>
-     </item>
-     <item row="3" column="0">
-      <widget class="QLabel" name="label_6">
-       <property name="text">
-        <string>滚动字幕</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="1" colspan="3">
-      <widget class="QLineEdit" name="lineEdit_4"/>
-     </item>
-     <item row="4" column="3">
-      <widget class="QPushButton" name="pushButton_2">
-       <property name="text">
-        <string>选择</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="0">
-      <widget class="QLabel" name="label_13">
-       <property name="text">
-        <string>背景图片</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="1" colspan="2">
-      <widget class="QLineEdit" name="lineEdit_5"/>
-     </item>
-    </layout>
+    <property name="title">
+     <string>抽奖活动基本信息</string>
+    </property>
+    <widget class="QWidget" name="">
+     <property name="geometry">
+      <rect>
+       <x>11</x>
+       <y>20</y>
+       <width>411</width>
+       <height>171</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>项目名</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="lineEditProjectName"/>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>抽奖主题</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="lineEditProjectMainTitle"/>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_5">
+        <property name="text">
+         <string>抽奖副标题</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="lineEditProjectSubTitle"/>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_6">
+        <property name="text">
+         <string>滚动字幕</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QLineEdit" name="lineEditProjectRollTitle"/>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="label_13">
+        <property name="text">
+         <string>背景图片</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="labelImage">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnEditImage">
+          <property name="maximumSize">
+           <size>
+            <width>71</width>
+            <height>23</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>编辑图片</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
    </widget>
+   <zorder>groupBox_2</zorder>
    <zorder>layoutWidget</zorder>
    <zorder>groupBox</zorder>
-   <zorder>listViewProjects</zorder>
+   <zorder>listProjects</zorder>
+   <zorder>widget</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>500</width>
+     <width>600</width>
      <height>23</height>
     </rect>
    </property>

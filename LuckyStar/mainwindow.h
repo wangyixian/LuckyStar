@@ -19,7 +19,9 @@ public:
 
 private:
     Ui::MainWindow *ui;
+
     ProjectDao projectDao;
+    QList<ProjectDto> projectDtos;
 
 private slots:
     //名单设置按钮的单击信号槽
@@ -33,6 +35,9 @@ private slots:
 
     //Create the new project
     void createNewProject();
+
+    //Select project item changed
+    void selectProjectItemChanged();
 
 //    //Select all projects
 //    void selectAllProjects();

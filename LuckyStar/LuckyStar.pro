@@ -25,7 +25,8 @@ SOURCES += main.cpp\
     dto/basedto.cpp \
     dao/basedao.cpp \
     dto/projectdto.cpp \
-    dao/projectdao.cpp
+    dao/projectdao.cpp \
+    util/dbutil.cpp
 
 HEADERS  += mainwindow.h \
     dialognamelist.h \
@@ -38,7 +39,8 @@ HEADERS  += mainwindow.h \
     dto/basedto.h \
     dao/basedao.h \
     dto/projectdto.h \
-    dao/projectdao.h
+    dao/projectdao.h \
+    util/dbutil.h
 
 FORMS    += mainwindow.ui \
     dialognamelist.ui \
@@ -51,3 +53,6 @@ FORMS    += mainwindow.ui \
 
 RESOURCES += \
     application.qrc
+
+OTHER_FILES += \
+    data/ddl.txt

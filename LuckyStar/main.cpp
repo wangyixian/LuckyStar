@@ -5,10 +5,34 @@
 #include <QPushButton>
 #include <QSlider>
 #include <QSpinBox>
+#include <util/dbutil.h>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
+    // View the QT support databases
+    qDebug() << "Available drivers:";
+    QStringList drivers = QSqlDatabase::drivers();
+    qDebug() << drivers;
+
+    //If the database of LuckStar did not exist,
+    //create it.
+    bool isExit = QFile::exists("data.dat");
+    if(!isExit)
+    {
+        DBUtil dbUtil;
+        if(!dbUtil.Connect())
+        {
+            return -1;
+        }
+        if(!dbUtil.CreateTables())
+        {
+            return -1;
+        }
+        dbUtil.Close();
+    }
+
     MainWindow *w = new MainWindow();
     w->show();
 //    //学习测试用代码

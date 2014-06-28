@@ -2,18 +2,23 @@
 
 #include <dto/projectdto.h>
 
+#include <QMessageBox>
+
+#include <util/dbutil.h>
+
 ProjectDao::ProjectDao()
 {
 }
 
-QList<BaseDto> ProjectDao::selectAll()
+QList<ProjectDto> ProjectDao::selectAll()
 {
-    QList<BaseDto> projects;
+    QList<ProjectDto> projects;
 
-    QSqlDatabase db = this->connect();
+    DBUtil dbUtil;
+    dbUtil.Connect();
 
-    QSqlQuery query("", db);
-    query.exec("SELECT * FROM Project");
+    QSqlQuery query;
+    query.exec("select * from Project");
     while(query.next())
     {
         ProjectDto project;
@@ -22,7 +27,7 @@ QList<BaseDto> ProjectDao::selectAll()
         QString mainTitle = query.value(2).toString();
         QString subTitle = query.value(3).toString();
         QString rollTitle = query.value(4).toString();
-        QBitArray backgroundImage = query.value(5).toBitArray();
+        QByteArray backgroundImage = query.value(5).toByteArray();
 
         project.setProjectID(projectID);
         project.setProjectName(projectName);
@@ -34,7 +39,7 @@ QList<BaseDto> ProjectDao::selectAll()
         projects.append(project);
     }
 
-    db.close();
+    dbUtil.Close();
 
     return projects;
 }

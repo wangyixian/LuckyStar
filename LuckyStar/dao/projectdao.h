@@ -1,5 +1,7 @@
 #include "basedao.h"
 
+#include <dto/projectdto.h>
+
 #ifndef PROJECTDAO_H
 #define PROJECTDAO_H
 
@@ -9,7 +11,7 @@ public:
     ProjectDao();
 
 public:
-    virtual QList<BaseDto> selectAll();
+    QList<ProjectDto> selectAll();
 };
 
 #endif // PROJECTDAO_H

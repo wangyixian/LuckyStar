@@ -65,13 +65,13 @@ QString ProjectDto::getRollTitle()
 }
 
 //Set the background image with value
-void ProjectDto::setBackgroundImage(QBitArray value)
+void ProjectDto::setBackgroundImage(QByteArray value)
 {
     this->backgroundImage = value;
 }
 
 //Get the background image
-QBitArray ProjectDto::getBackgroundImage()
+QByteArray ProjectDto::getBackgroundImage()
 {
     return this->backgroundImage;
 }

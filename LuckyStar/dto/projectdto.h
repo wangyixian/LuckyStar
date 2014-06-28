@@ -29,7 +29,7 @@ private:
     QString rollTitle;
 
     //Project's Background image bytes
-    QBitArray backgroundImage;
+    QByteArray backgroundImage;
 
 public:
     //Set the Project ID with value
@@ -58,9 +58,9 @@ public:
     QString getRollTitle();
 
     //Set the background image with value
-    void setBackgroundImage(QBitArray value);
+    void setBackgroundImage(QByteArray value);
     //Get the background image
-    QBitArray getBackgroundImage();
+    QByteArray getBackgroundImage();
     
 };
 
