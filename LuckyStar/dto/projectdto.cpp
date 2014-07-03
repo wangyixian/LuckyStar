@@ -1,8 +1,22 @@
 #include "projectdto.h"
 
+#include <QObject>
+
 ProjectDto::ProjectDto()
 {
 }
+
+//The default prefix of project name
+const QString ProjectDto::DEFAULT_PREFIX_PROJECT_NAME = QString::fromLocal8Bit("幸运星抽奖活动");
+
+//The default suffix of main title
+const QString ProjectDto::DEFAULT_SUFFIX_MAIN_TITLE = QString::fromLocal8Bit("主标题");
+
+//The default suffix of sub title
+const QString ProjectDto::DEFAULT_SUFFIX_SUB_TITLE = QString::fromLocal8Bit("副标题");
+
+//The default suffix of roll title
+const QString ProjectDto::DEFAULT_SUFFIX_ROLL_TITLE = QString::fromLocal8Bit("滚动字幕");
 
 //Set the Project ID with value
 void ProjectDto::setProjectID(int value)

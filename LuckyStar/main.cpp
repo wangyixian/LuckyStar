@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+﻿#include "mainwindow.h"
 #include <QApplication>
 #include <QHBoxLayout>
 #include <QLabel>
@@ -10,6 +10,14 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
+//    QTextCodec::setCodecForTr(QTextCodec::codecForName("gb18030"));
+
+//    QString str(QObject::tr("宁愿看见两个恶魔在拔河，也不愿看见一只天使在跳舞。"));
+
+//     QPushButton ww(ProjectDto::DEFAULT_PREFIX_PROJECT_NAME);
+
+//    ww.show();
 
     // View the QT support databases
     qDebug() << "Available drivers:";

@@ -32,6 +32,18 @@ private:
     QByteArray backgroundImage;
 
 public:
+    //The default prefix of project name
+    static const QString DEFAULT_PREFIX_PROJECT_NAME;
+
+    //The default suffix of main title
+    static const QString DEFAULT_SUFFIX_MAIN_TITLE;
+
+    //The default suffix of sub title
+    static const QString DEFAULT_SUFFIX_SUB_TITLE;
+
+    //The default suffix of roll title
+    static const QString DEFAULT_SUFFIX_ROLL_TITLE;
+
     //Set the Project ID with value
     void setProjectID(int value);
     //Get the Project ID

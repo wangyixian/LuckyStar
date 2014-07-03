@@ -3,4 +3,7 @@
         <file>images/Add.gif</file>
         <file>images/Delete.gif</file>
     </qresource>
+    <qresource prefix="/new/DefaultPhoto">
+        <file>images/ProjectBackground.jpg</file>
+    </qresource>
 </RCC>

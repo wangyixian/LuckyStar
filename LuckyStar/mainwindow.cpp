@@ -38,8 +38,41 @@ MainWindow::~MainWindow()
 //Create the new project
 void MainWindow::createNewProject()
 {
+    //Collect the prefix name projects
+    QList<QString> projectNames;
+    foreach(ProjectDto projectDto, this->projectDtos) {
+        if(projectDto.getProjectName().startsWith(ProjectDto::DEFAULT_PREFIX_PROJECT_NAME)){
+           projectNames.push_back(projectDto.getProjectName());
+       }
+    }
 
-    //this->ui->listViewProjects->setModel();
+    //Get the new project name
+    int i = 0;
+    QString projectPrefixName = ProjectDto::DEFAULT_PREFIX_PROJECT_NAME;
+    QString newProjectName;
+    do{
+        i++;
+        newProjectName = projectPrefixName + QString::number(i);
+    }
+    while(projectNames.contains(newProjectName));
+
+    //Create the new project
+    ProjectDto newProject;
+    newProject.setProjectName(newProjectName);
+    newProject.setMainTitle(newProjectName + ProjectDto::DEFAULT_SUFFIX_MAIN_TITLE);
+    newProject.setSubTitle(newProjectName + ProjectDto::DEFAULT_SUFFIX_SUB_TITLE);
+    newProject.setRollTitle(newProjectName + ProjectDto::DEFAULT_SUFFIX_ROLL_TITLE);
+    QFile file(QObject::tr(":/new/DefaultPhoto/images/ProjectBackground.jpg"));
+    file.open(QIODevice::ReadOnly);
+    newProject.setBackgroundImage(file.readAll());
+
+    int newProjectID = this->projectDao.insert(newProject);
+    if(newProjectID > 0){
+        newProject.setProjectID(newProjectID);
+        this->projectDtos.push_back(newProject);
+        this->ui->listProjects->addItem(newProject.getProjectName());
+        this->ui->listProjects->setCurrentRow(this->ui->listProjects->count() - 1);
+    }
 }
 
 void MainWindow::selectProjectItemChanged()

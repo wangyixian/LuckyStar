@@ -11,7 +11,11 @@ public:
     ProjectDao();
 
 public:
+
     QList<ProjectDto> selectAll();
+
+    //Insert the new project and return the inserted object's ID
+    int insert(ProjectDto dto);
 };
 
 #endif // PROJECTDAO_H

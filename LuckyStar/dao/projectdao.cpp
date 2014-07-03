@@ -19,8 +19,7 @@ QList<ProjectDto> ProjectDao::selectAll()
 
     QSqlQuery query;
     query.exec("select * from Project");
-    while(query.next())
-    {
+    while(query.next()){
         ProjectDto project;
         int projectID = query.value(0).toInt();
         QString projectName = query.value(1).toString();
@@ -42,4 +41,30 @@ QList<ProjectDto> ProjectDao::selectAll()
     dbUtil.Close();
 
     return projects;
+}
+
+int ProjectDao::insert(ProjectDto dto)
+{
+    int projectID = -1;
+
+    DBUtil dbUtil;
+    dbUtil.Connect();
+
+    QSqlQuery query;
+    query.prepare("insert into Project(ProjectName, MainTitle, SubTitle, RollTitle, BackgroundImage)"
+                  "values(:ProjectName,:MainTitle,:SubTitle,:RollTitle,:BackgroundImage)");
+    query.bindValue(":ProjectName", dto.getProjectName());
+    query.bindValue(":MainTitle", dto.getMainTitle());
+    query.bindValue(":SubTitle", dto.getSubTitle());
+    query.bindValue(":RollTitle", dto.getRollTitle());
+    query.bindValue(":BackgroundImage", dto.getBackgroundImage());
+    if(query.exec()){
+        projectID = query.lastInsertId().toInt();
+    } else {
+        QMessageBox::warning(0, "", query.lastError().text());
+    }
+
+    dbUtil.Close();
+
+    return projectID;
 }
