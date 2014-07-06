@@ -68,3 +68,35 @@ int ProjectDao::insert(ProjectDto dto)
 
     return projectID;
 }
+
+bool ProjectDao::update(ProjectDto dto)
+{
+    bool result = false;
+
+    DBUtil dbUtil;
+    dbUtil.Connect();
+
+    QSqlQuery query;
+    query.prepare("update Project set "
+                  "ProjectName = :ProjectName, "
+                  "MainTitle = :MainTitle, "
+                  "SubTitle = :SubTitle, "
+                  "RollTitle = :RollTitle, "
+                  "BackgroundImage = :BackgroundImage"
+                  "where ProjectID = :ProjectID");
+    query.bindValue(":ProjectName", dto.getProjectName());
+    query.bindValue(":MainTitle", dto.getMainTitle());
+    query.bindValue(":SubTitle", dto.getSubTitle());
+    query.bindValue(":RollTitle", dto.getRollTitle());
+    query.bindValue(":BackgroundImage", dto.getBackgroundImage());
+    query.bindValue(":ProjectID", dto.getProjectID());
+    if(query.exec()){
+        result = true;
+    } else {
+        QMessageBox::warning(0, "", query.lastError().text());
+    }
+
+    dbUtil.Close();
+
+    return result;
+}

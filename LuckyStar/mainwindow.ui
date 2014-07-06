@@ -80,12 +80,12 @@
       </item>
      </layout>
     </widget>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="btnStart">
      <property name="geometry">
       <rect>
        <x>350</x>
        <y>20</y>
-       <width>71</width>
+       <width>75</width>
        <height>71</height>
       </rect>
      </property>
@@ -149,7 +149,7 @@
     <property name="title">
      <string>抽奖活动基本信息</string>
     </property>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>11</x>
@@ -224,7 +224,7 @@
            </size>
           </property>
           <property name="text">
-           <string>编辑图片</string>
+           <string>选择图片</string>
           </property>
          </widget>
         </item>
@@ -234,10 +234,8 @@
     </widget>
    </widget>
    <zorder>groupBox_2</zorder>
-   <zorder>layoutWidget</zorder>
    <zorder>groupBox</zorder>
    <zorder>listProjects</zorder>
-   <zorder>widget</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -253,6 +251,7 @@
      <string>文件</string>
     </property>
     <addaction name="actionNew"/>
+    <addaction name="actionSave"/>
     <addaction name="separator"/>
     <addaction name="actionImport"/>
     <addaction name="actionExport"/>
@@ -318,6 +317,7 @@
     <bool>false</bool>
    </attribute>
    <addaction name="actionNew"/>
+   <addaction name="actionSave"/>
    <addaction name="separator"/>
    <addaction name="actionSelectAll"/>
    <addaction name="actionDelete"/>
@@ -432,6 +432,11 @@
   <action name="actionWinningList">
    <property name="text">
     <string>中奖查看</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="text">
+    <string>保存</string>
    </property>
   </action>
  </widget>

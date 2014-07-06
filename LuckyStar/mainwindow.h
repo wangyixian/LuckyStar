@@ -20,24 +20,59 @@ public:
 private:
     Ui::MainWindow *ui;
 
+    bool isDirty;
+
+    //The DAO of project
     ProjectDao projectDao;
+
+    //The list of project DTO
     QList<ProjectDto> projectDtos;
 
+    //Draw the image on the image lable
+    void drawImage(QByteArray imageData);
+
+    //Reat the file and return the byte array
+    QByteArray readFile(QString path);
+
+    //Get the selected project
+    ProjectDto getSelected();
+
 private slots:
-    //名单设置按钮的单击信号槽
-    //void btnNameListClicked(int projectID);
-
-    //奖项设置按钮的单击信号槽
-    //void btnAwardListClicked(int projectID);
-
-    //中奖名单按钮的单击信号槽
-    //void btnWinningListClicked(int projectID);
-
     //Create the new project
     void createNewProject();
 
     //Select project item changed
     void selectProjectItemChanged();
+
+    //Open the name list dialog
+    void openNameListDialog();
+
+    //Open the award list dialog
+    void openAwardListDialog();
+
+    //Open the win list dialog
+    void openWinListDialog();
+
+    //Save the project information
+    void saveProjects();
+
+    //Select the image
+    void selectImage();
+
+    //Edit the project name
+    void editProjectName();
+
+    //Edit the main title
+    void editMainTitle();
+
+    //Edit the sub title
+    void editSubTitle();
+
+    //Edit the roll text
+    void editRollText();
+
+    //Start the bingo active
+    void startBingo();
 
 //    //Select all projects
 //    void selectAllProjects();

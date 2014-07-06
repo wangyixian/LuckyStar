@@ -26,7 +26,10 @@ SOURCES += main.cpp\
     dao/basedao.cpp \
     dto/projectdto.cpp \
     dao/projectdao.cpp \
-    util/dbutil.cpp
+    util/dbutil.cpp \
+    common/constants.cpp \
+    dto/userdto.cpp \
+    dao/userdao.cpp
 
 HEADERS  += mainwindow.h \
     dialognamelist.h \
@@ -40,7 +43,10 @@ HEADERS  += mainwindow.h \
     dao/basedao.h \
     dto/projectdto.h \
     dao/projectdao.h \
-    util/dbutil.h
+    util/dbutil.h \
+    common/constants.h \
+    dto/userdto.h \
+    dao/userdao.h
 
 FORMS    += mainwindow.ui \
     dialognamelist.ui \
